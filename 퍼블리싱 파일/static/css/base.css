@@ -1,0 +1,258 @@
+@charset "UTF-8";
+:root {
+  --fs-sm: 1.4rem;
+  --fs-com: 1.6rem;
+  --fs-md: 1.8rem;
+  --fs-stit: 2.2rem;
+  --fs-ctit: 2.5rem;
+  --fs-mtit: 3.5rem;
+  --fs-tit: 4.5rem;
+  --fs-vtit: 6.5rem;
+}
+
+@media all and (max-width: 85.375rem) {
+  :root {
+    --fs-mtit: 3.2rem;
+    --fs-tit: 4.0rem;
+    --fs-vtit: 5.5rem;
+  }
+}
+@media all and (max-width: 64rem) {
+  :root {
+    --fs-stit: 2rem;
+    --fs-ctit: 2.2rem;
+    --fs-mtit: 3rem;
+    --fs-tit: 3.5rem;
+    --fs-vtit: 5rem ;
+  }
+}
+@media all and (max-width: 63.9375rem) {
+  :root {
+    --fs-sm: 1.3rem;
+    --fs-com: 1.5rem;
+    --fs-md: 1.7rem;
+    --fs-stit: 1.9rem;
+    --fs-ctit: 2.1rem;
+    --fs-mtit: 2.6rem;
+    --fs-tit: 2.8rem;
+    --fs-vtit: 4.5rem;
+  }
+}
+@media all and (max-width: 47.9375rem) {
+  :root {
+    --fs-sm: 1.2rem;
+    --fs-com: 1.4rem;
+    --fs-md: 1.6rem;
+    --fs-stit: 1.8rem;
+    --fs-ctit: 2rem;
+    --fs-mtit: 2.2rem;
+    --fs-tit: 3rem;
+    --fs-vtit: 4rem;
+  }
+}
+body {
+  line-height: 1;
+  font-size: var(--fs-com);
+  font-weight: 400;
+  font-family: "Pretendard", sans-serif;
+  color: #000;
+}
+
+/* visible*/
+.d-none {
+  display: none !important;
+}
+
+.hidden {
+  overflow: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 1px !important;
+}
+
+/* 정렬 */
+.flex-bt {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.txt-center {
+  text-align: center !important;
+}
+.txt-left {
+  text-align: left !important;
+}
+.txtright {
+  text-align: right !important;
+}
+
+.br {
+  display: block;
+}
+
+/* 폰트 */
+.ff-pop {
+  font-family: "Poppins", sans-serif;
+}
+
+.ff-kr {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.fw-200 {
+  font-weight: 200 !important;
+}
+
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+/* 보더 */
+.border-top-1 {
+  border-top: 1px solid #000;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid #000;
+}
+
+/* 언어 */
+.lang-wrap {
+  position: relative;
+  text-align: right;
+  font-size: 1.3rem;
+}
+.lang-wrap .lang-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding-right: 2rem;
+}
+.lang-wrap .lang-btn .fi {
+  display: block;
+  margin-right: 0.5rem;
+  width: 2rem;
+}
+.lang-wrap .lang-btn .fi img {
+  vertical-align: middle;
+}
+.lang-wrap .lang-btn::after {
+  position: absolute;
+  right: 0;
+  content: "\e803";
+  transform: rotate(0);
+  transition: transform 0.2s;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+.lang-wrap .lang-btn.active::after {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+.lang-wrap .lang-option {
+  display: none;
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  width: calc(100% - 1rem);
+  text-align: center;
+  font-size: 0.9em;
+  background-color: rgba(31, 31, 31, 0.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.lang-wrap .lang-option a {
+  display: block;
+  padding: 0.5rem;
+}
+.lang-wrap .lang-option a:focus {
+  color: #fff;
+  background-color: #111;
+}
+
+/* 셀렉트 */
+.z-index-100 {
+  z-index: 100 !important;
+  position: relative !important;
+}
+
+.select-wrap .select-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.select-wrap .select {
+  margin: 0 0.5rem;
+}
+.select-wrap .select-arrow {
+  position: relative;
+}
+.select-wrap .select-arrow::after {
+  position: absolute;
+  top: -0.7rem;
+  content: "\e803";
+  font-family: "fontello";
+  transform: rotate(0);
+  transition: transform 0.6s;
+  -webkit-transition: transform 0.6s;
+  -moz-transition: transform 0.6s;
+  -ms-transition: transform 0.6s;
+  -o-transition: transform 0.6s;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+}
+.select-wrap.active .select-arrow::after {
+  transform: rotate(180deg);
+  transition: transform 0.6s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.select-wrap .option {
+  display: none;
+}/*# sourceMappingURL=base.css.map */

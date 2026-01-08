@@ -1,0 +1,504 @@
+@import "./variable.scss";
+
+body {
+	font-family: "SUIT", sans-serif;
+	font-weight: 500;
+	background-color: #f1f1f6;
+}
+
+.site-wrap {
+	width: 100%;
+	min-height: 100vh;
+}
+
+/*
+정렬
+*/
+.flex-between {
+	@include flex-bt;
+}
+
+.flex-start {
+	@include flex-start;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-end{
+	@include flex-end; /*240705*/
+}
+
+.align-top {
+	align-items: flex-start !important;/*240705*/
+}
+.align-center {
+	align-items: center !important;
+}
+
+.txt-center {
+	text-align: center !important;
+}
+
+.txt-left {
+	text-align: left !important;
+}
+
+.txt-right {
+	text-align: right !important;
+}
+
+.mr-auto {
+	margin: 0 auto !important;
+}
+
+.relative {
+	@include relative;
+}
+
+.flex-1 {
+	flex-grow: 1 !important;
+}
+
+/* visible */
+.hidden {
+	overflow: hidden !important;
+	width: 0 !important;
+	height: 0 !important;
+	line-height: 0 !important;
+}
+
+.txt-hidden {
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	text-indent: -9999px;
+	font-size: 1px;
+}
+
+.d-none {
+	display: none !important;
+}
+
+
+/*폰트 */
+
+.fs-15 {
+	font-size: 1.5rem !important;
+}
+
+.fw-500 {
+	font-weight: 500 !important;
+}
+
+.fw-600 {
+	font-weight: 600 !important;
+}
+
+.fc-666 {
+	color: #666 !important;
+}
+
+.fc-blue{
+	color: #645DD3 !important;/*240705*/
+}
+
+.fc-red{
+	color: #F00 !important;/*240705*/
+}
+
+
+/* 배경색 */
+
+.bg-white {
+	background-color: #fff;
+}
+
+.bg-deepgray {
+	background-color: #59595f !important;
+}
+
+.btn.bg-deepgray:hover {
+	background-color: #6f6f74 !important;
+}
+
+.bg-purple {
+	background-color: #645dd3 !important;
+}
+
+.btn.bg-purple:hover {
+	background-color: #756ddf !important;
+}
+
+.bg-deep-purple {
+	background-color: #272180 !important;
+}
+
+.btn.bg-deep-purple:hover {
+	background-color: #423c99 !important;
+}
+
+.bg-red {
+	background-color: #c91800 !important;
+}
+
+.btn.bg-red:hover {
+	background-color: #d84632 !important;
+}
+
+.bg-black {
+	background-color: #000 !important;
+}
+
+.btn.bg-black:hover {
+	background-color: rgb(37, 35, 35) !important;
+}
+
+.bg-gray{
+	background-color: #F2F5F6;
+}/*240705*/
+
+
+/* 버튼 */
+
+.btn {
+	display: inline-block;
+	text-align: center;
+}
+
+.blue-btn-01 {
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: #fff;
+	background-color: #272180;
+}
+
+.table-btn {
+	width: 9rem;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: #fff;
+}
+
+.gray-btn {
+	height: 5rem;
+	line-height: 5rem;
+	text-align: center;
+	font-weight: 600;
+	color: #fff;
+	border: 1px solid #b3b3b3;
+	background-color: #bfbfbf;
+}
+
+.form-btn {
+	width: 11rem;
+	height: 5rem;
+	line-height: 5rem;
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: #fff;
+}
+
+.lg-btn{
+	width: 10rem;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+.xl-btn{
+	width: 11rem;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: 700;
+}/*240705*/
+
+.white-btn{
+	background-color: #fff;
+	border: 1px solid #ddd;
+}/*240705*/
+
+
+/* Margin Set */
+.m-0 {
+	margin: 0 !important;
+}
+
+.ml-0 {
+	margin-left: 0 !important;
+}
+
+.ml-20{
+	margin-left: 2rem  !important; /*240705*/
+}
+
+.mr-0 {
+	margin-right: 0 !important;
+}
+
+.mr-5 {
+	margin-right: .5rem !important;
+}
+
+.mr-10 {
+	margin-right: 1rem !important;
+}
+
+.mr-15 {
+	margin-right: 1.5rem !important;
+}
+
+.mr-20 {
+	margin-right: 2rem !important;/*240705*/
+}
+
+
+
+.mt-0 {
+	margin-top: 0 !important;
+}
+
+.mt-10 {
+	margin-top: 1rem !important;
+}
+
+.mt-30 {
+	margin-top: 3rem !important;
+}
+
+
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.mb-5 {
+	margin-bottom: .5rem !important;
+}
+
+.mb-10 {
+	margin-bottom: 1rem !important;
+}
+
+.mb-40 {
+	margin-bottom: 4rem !important;
+}
+
+
+/* Padding Set */
+.p-0 {
+	padding: 0 !important;
+}
+
+.pb-0{
+	padding-bottom: 0 !important;
+}
+
+.pl-20{
+	padding-left: 2rem !important;/*240705*/
+}
+
+
+/* 보더 */
+
+
+.border-0 {
+	border: 0 none !important;
+}
+
+.border-l-0 {
+	border-left: 0 none !important;
+}
+
+.border-r-0 {
+	border-right: 0 none !important;
+}
+
+.border-t-0 {
+	border-top: 0 none !important;
+}
+
+.border-b-0 {
+	border-bottom: 0 none !important;
+}
+
+.border-gray {
+	border: 1px solid #dedede ;
+}/*240705*/
+
+.border-t-gray{
+	border-top: 1px solid #8F8F91 !important;
+}/*240705*/
+
+
+
+
+/* 너비 */
+
+.wid-90p {
+	width: 90% !important;
+}
+
+.wid-100p {
+	width: 100% !important;
+}
+
+
+.wid-70 {
+	width: 7rem !important;
+}
+
+.wid-110 {
+	width: 11rem !important;
+}
+
+.wid-180 {
+	width: 18rem !important;
+}
+
+.wid-200 {
+	width: 20rem !important;
+}
+
+.wid-500 {
+	width: 50rem !important;
+}
+
+.wid-700 {
+	width: 70rem !important;
+}
+
+
+/* 높이 */
+
+.hei-50 {
+	height: 5rem !important;
+}
+
+
+/* clearfix */
+.clearfix {
+	*zoom: 0;
+}
+
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: block;
+	line-height: 0px;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+/* 스크롤바 커스텀 */
+.scroll {
+	overflow: overlay;
+	overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: #59595f;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+.scroll::-webkit-scrollbar-track {}
+
+.scroll::-webkit-scrollbar-thumb {}
+
+.x-scroll {
+	overflow-y: hidden !important;
+	overflow-x: auto;
+}
+
+.y-scroll {
+	overflow-y: overlay;
+	overflow-y: auto;
+	overflow-x: hidden !important;
+}
+
+.over-table table {
+	border-collapse: separate;
+}
+
+
+
+/* input */
+
+input,
+textarea,
+select {
+	border: 0 none;
+}
+
+input[type=text] {
+	padding: 0 2rem;
+}
+
+label {
+	display: inline-block;
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+input[type="checkbox"]+label::before,
+input[type="radio"]+label::before {
+	position: absolute;
+	content: "";
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label,
+button {
+	cursor: pointer;
+}
+
+select:focus {
+	border-color: #333;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+/* date 커스텀 */
+input[type="date"] {
+	border: 0 none;
+}
+
+input[type="date"].calendar::-webkit-calendar-picker-indicator,
+input[type="text"].calendar::-webkit-calendar-picker-indicator {
+	appearance: none;
+	background-repeat: no-repeat;
+}
+
+
+/* file 커스텀 */
+input[type="file"]::file-selector-button,
+input[type="file"]::-webkit-file-upload-button {
+	display: none;
+}
+
+

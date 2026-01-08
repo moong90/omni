@@ -1,0 +1,131 @@
+
+
+
+
+@mixin bg-contain {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@mixin bg-center {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@mixin bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+@mixin relative {
+  position: relative; left:0; top:0;
+}
+
+@mixin absolute {
+  position: absolute; left:0; top:0;
+}
+
+@mixin position-center {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+}
+@mixin Y-center {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+@mixin X-center {
+  left:50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+@mixin flex-bt{
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-start{
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin flex-end{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+
+
+
+$mobile: 33.75rem; //540px
+$tablet: 51.25rem; //820px
+$tablet-md: 64rem; //1024px
+$tablet-lg: 80rem; //1280px
+$laptop: 85.375rem; //1366px
+$desktop: 105rem; //1680px
+$desktop-max:120.0625rem; //1921px
+
+
+
+@mixin desktop-max{
+  @media all and (min-width:$desktop-max) {
+    @content;
+  }
+}
+
+@mixin desktop{
+  @media all and (max-width:$desktop) {
+    @content;
+  }
+}
+
+@mixin laptop{
+  @media all and (max-width:$laptop) {
+    @content;
+  }
+}
+
+@mixin tablet-lg{
+  @media all and (max-width:$tablet-lg) {
+    @content;
+  }
+}
+@mixin tablet-md{
+  @media all and (max-width:$tablet-md) {
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media all and (max-width:$tablet) {
+    @content;
+  }
+}
+
+@mixin mobile{
+  @media all and (max-width:$mobile) {
+    @content;
+  }
+}

@@ -1,0 +1,52 @@
+/* =========================
+   Color System
+========================= */
+
+/* Base colors */
+$color-black: #000;
+$color-white: #fff;
+
+/* Text colors */
+$color-text-primary: #191919;
+$color-text-secondary: #333;
+$color-text-tertiary: #666;
+$color-text-muted: #727272;
+$color-text-disabled: #999;
+
+/* Gray scale */
+$color-gray-light: #bbb;
+$color-gray: #7a7a7a;
+
+/* Brand / Accent colors */
+$color-primary: #048CFE;
+$color-primary-dark: #2d69f5;
+$color-primary-blue: #003C96;
+
+$color-secondary: #640FE6;
+$color-secondary-dark: #2332C3;
+$color-sky:#048CFE;
+
+/* =========================
+   Border Colors
+========================= */
+
+$border-color-primary: $color-primary-dark;
+$border-color-secondary: $color-secondary;
+$border-color_sky: $color-sky;
+
+/* =========================
+   Font System
+========================= */
+
+$font-family-base: 'LineSeed', sans-serif;
+$font-family-alt: 'Roboto', sans-serif;
+
+/* =========================
+   Background System
+========================= */
+
+$background-color_1: #fff;
+$background-color_2: #a7a7a7;
+$background-color_3: transparent;
+$background-color_4: #048CFE;
+$background-color_5: rgba(255, 255, 255, 0.9);

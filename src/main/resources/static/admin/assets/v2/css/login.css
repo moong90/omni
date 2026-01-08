@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* 
+로그인 
+*/
+/* 배경*/
+/* 정렬 */
+/* 미디어 쿼리 */
+.site-wrap {
+  background-color: #f1f1f6;
+}
+
+.login-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  color: #002e6e;
+}
+.login-wrap .login-tit {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin-bottom: 4rem;
+  width: 100%;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.login-wrap .login-tit span {
+  font-size: 0.45em;
+}
+.login-wrap .fieldset {
+  margin: 0 auto;
+  width: 35rem;
+}
+.login-wrap .fieldset .input-box {
+  margin: 0.5rem 0;
+  padding: 1.2rem 0;
+  width: 100%;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  color: #9499a1;
+  border: 1px solid #ccd1d9;
+  background-color: #f8f9fc;
+}
+.login-wrap .fieldset .input-box .id,
+.login-wrap .fieldset .input-box .pw {
+  display: inline-block;
+  width: 55px;
+  text-indent: -9999px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-right: 1px solid #d8dbe5;
+}
+.login-wrap .fieldset .input-box .id {
+  background-image: url("../img/icon/id.png");
+}
+.login-wrap .fieldset .input-box .pw {
+  background-image: url("../img/icon/pw.png");
+}
+.login-wrap .fieldset .input-box input {
+  padding: 0 2rem;
+  width: calc(100% - 6rem);
+  height: 3rem;
+  font-size: inherit;
+  color: inherit;
+}
+.login-wrap .fieldset .btn-box {
+  margin-top: 1.5rem;
+}
+.login-wrap .fieldset .login-btn {
+  width: 100%;
+  height: 7rem;
+  text-align: center;
+  line-height: 7rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  background-color: #272180;
+}/*# sourceMappingURL=login.css.map */

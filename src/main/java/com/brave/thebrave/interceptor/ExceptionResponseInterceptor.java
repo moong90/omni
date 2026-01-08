@@ -1,0 +1,87 @@
+package com.brave.thebrave.interceptor;
+
+import com.brave.thebrave.api.response.DefaultResponse;
+import com.brave.thebrave.constants.RETURN_CODE;
+import com.brave.thebrave.exception.CustomBadCredentialException;
+import com.brave.thebrave.exception.CustomBadRequestException;
+import com.brave.thebrave.exception.CustomWrongPasswordException;
+import com.google.gson.Gson;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.MethodParameter;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.server.ServerHttpRequest;
+import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
+@ControllerAdvice
+public class ExceptionResponseInterceptor extends ResponseEntityExceptionHandler implements ResponseBodyAdvice<Object> {
+
+    private static Logger logger = LoggerFactory.getLogger(ExceptionResponseInterceptor.class);
+
+    @ExceptionHandler({CustomBadRequestException.class})
+    public ResponseEntity<DefaultResponse> handleAccessDeniedException(CustomBadRequestException e, WebRequest request) {
+        logger.debug(e.getMessage());
+        return new ResponseEntity<DefaultResponse>(new DefaultResponse(e), HttpStatus.OK);
+    }
+    @ExceptionHandler({CustomBadCredentialException.class})
+    public ResponseEntity<DefaultResponse> handleAccessDeniedException(CustomBadCredentialException e, WebRequest request) {
+        logger.debug(e.getMessage());
+        return new ResponseEntity<DefaultResponse>(new DefaultResponse(e), HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler({CustomWrongPasswordException.class})
+    public ResponseEntity<DefaultResponse> handleAccessDeniedException(CustomWrongPasswordException e, WebRequest request) {
+        logger.debug(e.getMessage());
+        return new ResponseEntity<DefaultResponse>(new DefaultResponse(e), HttpStatus.OK);
+    }
+
+    @ExceptionHandler({ResourceNotFoundException.class})
+    public ResponseEntity<DefaultResponse> handleAccessDeniedException(ResourceNotFoundException e, WebRequest request) {
+        return new ResponseEntity<DefaultResponse>(new DefaultResponse(RETURN_CODE.NO_DATA), HttpStatus.OK);
+    }
+    @ExceptionHandler({Exception.class})
+    public ResponseEntity<DefaultResponse> handleAccessDeniedException(Exception e, WebRequest request) {
+        logger.error(new Gson().toJson(request.getParameterMap()), e);
+        return new ResponseEntity<DefaultResponse>(new DefaultResponse(RETURN_CODE.ERROR, e), HttpStatus.OK);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status,
+                                                                  WebRequest request) {
+        logger.warn(
+                String.format("bad parameter %s user_id:%s error:%s", request.getDescription(false), request.getHeader("user_id"), ex.getMessage()));
+
+        if (ex.getMessage().indexOf(Min.class.getSimpleName()) != -1) {
+            return new ResponseEntity(new DefaultResponse(RETURN_CODE.BAD_REQUEST_PARAM_TYPE), HttpStatus.OK);
+        }
+        if (ex.getMessage().indexOf(Max.class.getSimpleName()) != -1) {
+            return new ResponseEntity(new DefaultResponse(RETURN_CODE.BAD_REQUEST_PARAM_TYPE), HttpStatus.OK);
+        }
+
+        return new ResponseEntity(new DefaultResponse(RETURN_CODE.BAD_REQUEST), HttpStatus.OK);
+    }
+
+    @Override
+    public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
+        return false;
+    }
+
+    @Override
+    public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
+        return null;
+    }
+}

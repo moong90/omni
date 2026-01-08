@@ -1,0 +1,109 @@
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+  port: 8082
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-request: true
+      force-response: true
+    session:
+      timeout: 30m
+spring:
+  application:
+    name: thebrave
+  cache:
+    cache-names: cache1,cache2
+    caffeine:
+      spec: maximumSize=100,expireAfterAccess=600s,expireAfterWrite=10m
+    jcache:
+      config: classpath:ehcache.xml
+  data:
+    rest:
+      base-path: /api/v3.1/
+      defaultMediaType: application/json
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 3
+    password:
+    url:
+    username:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+  freemarker:
+    cache: false
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+  main:
+    allow-bean-definition-overriding: true
+  mandatory-file-encoding: UTF-8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  web:
+    resources:
+      add-mappings: true
+      static-locations: classpath:/static/
+mybatis:
+  mapper-locations: classpath*:sqlMapper/**/*.xml
+  type-aliases-package: com.brave.thebrave.api.response
+
+auth:
+  expired_days: 3600
+db:
+  lang: ko
+  secret:
+    key: ''
+    name: DB_SECRET_KEY
+dev:
+  mode: true
+dir:
+  file-path:
+    board:
+      eng: eng/board
+      jpn: jpn/board
+      kor: kor/board
+      vt: vt/board
+      cn: cn/board
+    page:
+      eng: eng/contents
+      jpn: jpn/contents
+      kor: kor/contents
+      vt: vt/contents
+      cn: cn/contents
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+logging:
+  config: classpath:logback.xml
+
+site:
+  domain:
+    name: omnifit
+    default: ENG
